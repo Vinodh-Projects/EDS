@@ -19,22 +19,22 @@ export default function decorate(block) {
 
   // Create and append title
   const titleElement = document.createElement('h2');
-  titleElement.className = 'faq-accordion__title';
+  titleElement.className = 'faq-accordion-title';
   titleElement.textContent = title;
   wrapper.appendChild(titleElement);
 
   // Create and append subtitle
   const subtitleElement = document.createElement('p');
-  subtitleElement.className = 'faq-accordion__subtitle';
+  subtitleElement.className = 'faq-accordion-subtitle';
   subtitleElement.textContent = subtitle;
   wrapper.appendChild(subtitleElement);
 
   // Create and append navigation buttons
   const nav = document.createElement('div');
-  nav.className = 'faq-accordion__navigation';
+  nav.className = 'faq-accordion-navigation';
   for (let i = 0; i < buttons.length; i += 2) {
     const button = document.createElement('a');
-    button.className = 'faq-accordion__button';
+    button.className = 'faq-accordion-button';
     button.href = buttons[i + 1];
     button.textContent = buttons[i];
     nav.appendChild(button);
@@ -43,19 +43,19 @@ export default function decorate(block) {
 
   // Create and append FAQ list
   const faqList = document.createElement('ul');
-  faqList.className = 'faq-accordion__list';
+  faqList.className = 'faq-accordion-list';
   for (let i = 0; i < faqs.length; i += 2) {
     const faqItem = document.createElement('li');
-    faqItem.className = 'faq-accordion__item';
+    faqItem.className = 'faq-accordion-item';
 
     const question = document.createElement('div');
-    question.className = 'faq-accordion__question';
+    question.className = 'faq-accordion-question';
     question.setAttribute('role', 'button');
     question.setAttribute('aria-expanded', i === 0 ? 'true' : 'false');
     question.textContent = faqs[i];
 
     const answer = document.createElement('div');
-    answer.className = 'faq-accordion__answer';
+    answer.className = 'faq-accordion-answer';
     answer.textContent = faqs[i + 1];
     answer.style.display = i === 0 ? 'block' : 'none';
 
